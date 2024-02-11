@@ -1,23 +1,43 @@
 import Task from "./Task";
 import "../style/Card.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FaH, FaPlus } from "react-icons/fa6";
 import { FaHistory } from "react-icons/fa";
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Card({ status }) {
-  const [taskList, setTaskList] = useState([])
-  const [taskInput, setTaskInput] = useState(false)
+  const [taskList, setTaskList] = useState(() => {
+    const storedTasks = localStorage.getItem(status);
+    return storedTasks ? JSON.parse(storedTasks) : [];
+  });
+
+  const [taskInput, setTaskInput] = useState(false) 
   const [taskInputValue, setTaskInputValue] = useState("")
 
- 
+
+  useEffect(() => {
+    const retriveTaskList = JSON.parse(localStorage.getItem(status));
+    if (retriveTaskList) setTaskList(retriveTaskList);
+  }, []);
+
+
   const handleAddTask  = (event) => {
     if (event.key === 'Enter' && taskInputValue.trim() !== "") {
-      const newTaskList = [...taskList, {id: uuidv4(),description: taskInputValue}]
+      const newTaskList = [
+        ...taskList, 
+        {id: uuidv4(),description: taskInputValue}]
+
       setTaskList(newTaskList)
       setTaskInput(false)
+      setTaskInput("")
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem(`${status}`, JSON.stringify(taskList));
+    console.log(localStorage)
+  }, [taskList]);
+  
 
   const handleTaskDelete = (id) => {
     const newTaskList = taskList.filter(task => task.id !== id)
@@ -25,6 +45,7 @@ export default function Card({ status }) {
 
 
   }
+
 
   return (
     <div className="card">

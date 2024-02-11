@@ -1,0 +1,60 @@
+.card {
+    background-color: #101204;
+    color: #b6c2cf;
+    border-radius: 12px;
+    padding: 12px;
+    flex-grow: 1;
+
+}
+
+
+.title {
+    justify-content: space-around;
+    margin: 10px;
+    align-items: left;
+}
+
+
+
+.task_list{
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    gap: 8px;
+ 
+}
+
+.task_input {
+    background-color: #22272b;
+    color: #b6c2cf;
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+
+}
+
+#task-action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#task-history:hover {
+    background: hsla(180,0%,50%,0.25);
+    cursor: pointer;
+}
+
+button {
+    background-color: #101204;
+    padding: 8px;
+    border-style: none;
+    border-radius: 12px;
+    width: 90%;
+    cursor: pointer;
+    gap: 5px;
+    color: #b6c2cf;
+    display: flex;
+}
+
+button:hover {
+    background: hsla(180,0%,50%,0.25);
+}

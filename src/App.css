@@ -1,6 +1,9 @@
 
-.App {
+.container {
+  padding: 10px;
+}
+.cards {
   display: flex;
-  justify-content: space-around;
-  gap: 1em;
+  justify-content: center;
+  max-width: 100%;
 }

@@ -5,13 +5,26 @@ function App() {
 
 
   return (
-    <div className="App">
-      <Card status="To do"/>
-      <Card status="In progress"/>
-      <Card status="Done"/>
- 
-  
+    <div className="container">
+      <div className="cards">
+
+        <div className="card_item">
+          <Card status="In progress" />
+        </div>
+        <div className="card_item">
+          <Card status="In progress" />
+        </div>
+        <div className="card_item">
+          <Card status="Done" />
+        </div>
+      </div>
+
+
     </div>
+
+
+
+
   );
 }
 

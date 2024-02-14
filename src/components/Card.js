@@ -6,19 +6,15 @@ import { FaHistory } from "react-icons/fa";
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Card({ status }) {
+
+  const [taskInput, setTaskInput] = useState(false) 
+  const [taskInputValue, setTaskInputValue] = useState("")
+
   const [taskList, setTaskList] = useState(() => {
     const storedTasks = localStorage.getItem(status);
     return storedTasks ? JSON.parse(storedTasks) : [];
   });
 
-  const [taskInput, setTaskInput] = useState(false) 
-  const [taskInputValue, setTaskInputValue] = useState("")
-
-
-  useEffect(() => {
-    const retriveTaskList = JSON.parse(localStorage.getItem(status));
-    if (retriveTaskList) setTaskList(retriveTaskList);
-  }, []);
 
 
   const handleAddTask  = (event) => {
@@ -74,18 +70,18 @@ export default function Card({ status }) {
         </>
         
         ) 
-        : (<div></div>)}
-
-
-
-        <div id="task-action">
-          <button onClick={(e) => setTaskInput(true)}>
-            <FaPlus />  Add task
-          </button>
-          <div id="task-history">
-            <FaHistory />
-          </div>
+        : ( <div id="task-action">
+        <button onClick={(e) => setTaskInput(true)}>
+          <FaPlus />  Add task
+        </button>
+        <div id="task-history">
+          <FaHistory />
         </div>
+      </div>)}
+
+
+
+       
 
       </div>
     </div>

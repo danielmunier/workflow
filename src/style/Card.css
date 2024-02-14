@@ -1,10 +1,14 @@
+*:root 
+
 .card {
-    background-color: #101204;
+    width: 200px;
+    background-color: #101204ba;
     color: #b6c2cf;
     border-radius: 12px;
     padding: 12px;
-    flex-grow: 1;
-
+    flex: 1 1 auto; 
+    margin: 8px; 
+    flex-shrink: 0; /* Evita que os cards encolham e afetem o tamanho da div cards */
 }
 
 
@@ -28,7 +32,7 @@
     color: #b6c2cf;
     border: none;
     padding: 10px;
-    border-radius: 12px;
+    border-radius: 10px;
 
 }
 
@@ -44,13 +48,12 @@
 }
 
 button {
-    background-color: #101204;
+    background-color: #101204ba;
     padding: 8px;
     border-style: none;
     border-radius: 12px;
-    width: 90%;
+    width: 100%;
     cursor: pointer;
-    gap: 5px;
     color: #b6c2cf;
     display: flex;
 }

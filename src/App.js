@@ -9,7 +9,7 @@ function App() {
       <div className="cards">
 
         <div className="card_item">
-          <Card status="In progress" />
+          <Card status="To do" />
         </div>
         <div className="card_item">
           <Card status="In progress" />

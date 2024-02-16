@@ -47,6 +47,7 @@ export default function Card({ status }) {
     <div className="card">
       <div className="title">
         <h3>{status}</h3>
+        <h3>{taskList.length}</h3>
       </div>
       <div className="task_list">
         {

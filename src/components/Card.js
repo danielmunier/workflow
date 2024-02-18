@@ -31,7 +31,6 @@ export default function Card({ status }) {
 
   useEffect(() => {
     localStorage.setItem(`${status}`, JSON.stringify(taskList));
-    console.log(localStorage)
   }, [taskList]);
   
 

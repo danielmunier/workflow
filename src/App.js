@@ -1,15 +1,11 @@
 import Card from "./components/Card";
 import "./App.css"
-import "./style/Stars.sass"
-import Task from "./components/Task";
 function App() {
 
 
   return (
     <div className="container">
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
+        
     
 
         <div className="cards">

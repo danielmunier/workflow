@@ -1,63 +1,77 @@
-*:root 
-
 .card {
     width: 300px;
-    background-color: #101204ba;
-    color: #b6c2cf;
-    border-radius: 12px;
-    padding: 12px;
-    flex: 1 1 auto; 
-    margin: 8px; 
-    flex-shrink: 0; /* Evita que os cards encolham e afetem o tamanho da div cards */
-}
-
-
-.title {
+    background: linear-gradient(145deg, #1f2937, #374151);
+    color: #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+    flex: 1 1 auto;
+    margin: 8px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3), inset 0px 4px 8px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .title {
     display: flex;
     justify-content: space-between;
-    align-items: left;
-}
-
-
-
-.task_list{
-    display: grid;
-    grid-template-rows: auto 1fr auto; 
-    gap: 8px;
- 
-}
-
-.task_input {
-    background-color: #22272b;
-    color: #b6c2cf;
-    border: none;
-    padding: 14px;
-    border-radius: 10px;
-
-}
-
-#task-action {
-    display: flex;
-    flex-direction: row;
     align-items: center;
-}
-
-#task-history:hover {
-    background: hsla(180,0%,50%,0.25);
-    cursor: pointer;
-}
-
-button {
-    background-color: #101204ba;
-    padding: 8px;
-    border-style: none;
-    border-radius: 12px;
-    width: 100%;
-    cursor: pointer;
-    color: #b6c2cf;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .task_input {
+    background-color: #4b5563;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+    width: 100%; /* Garante que o input ocupe no máximo o espaço da div mãe */
+    box-sizing: border-box; /* Inclui o padding dentro do tamanho total */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .task_list {
     display: flex;
-}
-
-button:hover {
-    background: hsla(180,0%,50%,0.25);
-}
+    flex-direction: column; /* Garante que o input e outros elementos fiquem em coluna */
+    gap: 12px;
+    width: 100%; /* O task_list também respeita as bordas do card */
+  }
+  
+  .task_input::placeholder {
+    color: #9ca3af;
+  }
+  
+  #task-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  
+  #task-history:hover {
+    background: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+  }
+  
+  button {
+    background: linear-gradient(145deg, #374151, rgba(31, 41, 55, 0.452));
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #e5e7eb;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: linear-gradient(145deg, #4b5563, #374151);
+  }
+  

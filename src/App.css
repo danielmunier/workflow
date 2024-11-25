@@ -1,19 +1,23 @@
-
 .container {
-  padding: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at bottom, #10204b, #111827);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
 }
 .cards {
   display: flex;
   justify-content: center;
   max-width: 100%;
+  gap: 16px;
 }
 
 @media only screen and (max-width: 600px) {
   .cards {
-    display: flex;
     flex-direction: column;
     align-items: center;
-
   }
-  
 }

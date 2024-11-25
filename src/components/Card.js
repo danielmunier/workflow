@@ -15,7 +15,7 @@ export default function Card({ status }) {
     return storedTasks ? JSON.parse(storedTasks) : [];
   });
 
-
+         
 
   const handleAddTask  = (event) => {
     if (event.key === 'Enter' && taskInputValue.trim() !== "") {
